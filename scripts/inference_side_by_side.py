@@ -28,6 +28,7 @@ def run():
 	# update test options with options used during training
 	ckpt = paddle.load(test_opts.checkpoint_path)
 	opts = ckpt['opts']
+	del ckpt
 	opts.update(vars(test_opts))
 	print(opts)
 	opts = Namespace(**opts)

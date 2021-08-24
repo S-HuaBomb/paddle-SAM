@@ -380,8 +380,10 @@ class Coach:
 	def __get_save_dict(self):
 		encoder_state = self.net.encoder.state_dict()
 		decoder_state = self.net.decoder.state_dict()
+		pre_encoder_state = self.net.pretrained_encoder.state_dict()
 		net_state = {'encoder': encoder_state,
-					 'decoder': decoder_state
+					 'decoder': decoder_state,
+					 'pretrained_encoder': pre_encoder_state
 					 }
 		save_dict = {
 			'state_dict': net_state,

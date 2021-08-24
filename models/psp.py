@@ -39,10 +39,9 @@ class pSp(nn.Layer):
 			self.encoder.set_state_dict(self.__get_keys(ckpt, 'encoder'))
 			self.decoder.set_state_dict(self.__get_keys(ckpt, 'decoder'))
 			if self.opts.start_from_encoded_w_plus:
-				self.pretrained_encoder = self.__load_pretrained_psp_encoder()
+				self.pretrained_encoder = self.__get_pretrained_psp_encoder()
+				self.pretrained_encoder.set_state_dict(self.__get_keys(ckpt, 'pretrained_encoder'))
 				self.pretrained_encoder.eval()
-				#self.pretrained_encoder = self.__get_pretrained_psp_encoder()
-				#self.pretrained_encoder.set_state_dict(self.__get_keys(ckpt, 'pretrained_encoder'))
 			self.__load_latent_avg(ckpt)
 		else:
 			print('Loading encoders weights from irse50!')
