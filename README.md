@@ -62,9 +62,9 @@ python scripts/train.py \
 ### Inference
 ```
 python scripts/inference_side_by_side.py 
---exp_dir=exp/test 
+--exp_dir=test_inference 
 --checkpoint_path=pretrained_models/sam_ffhq_aging.pdparams 
---data_path=CelebA_test 
+--data_path=images 
 --test_batch_size=4 
 --test_workers=0 
 --target_age=0,10,20,30,40,50,60,70,80,90,100
@@ -107,3 +107,4 @@ app.run(logdir="log")
 <img src="examples/198650.jpg" height = "104" width="1248"/><br/>
 
 更多结果见example文件夹中.
+
