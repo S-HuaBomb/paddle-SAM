@@ -32,7 +32,6 @@ def run():
 
     net = pSp(opts)
     net.eval()
-    net.cuda()
 
     age_transformers = [AgeTransformer(target_age=age) for age in opts.target_age.split(',')]
 
@@ -74,7 +73,7 @@ def run():
             with paddle.no_grad():
                 for ref_batch in ref_dataloader:
                     source_batch = paddle.to_tensor(source_batch, paddle.float32)
-                    ref_batch =  paddle.to_tensor(ref_batch, paddle.float32)
+                    ref_batch = paddle.to_tensor(ref_batch, paddle.float32)
                     source_input_age_batch = [age_transformer(img) for img in source_batch]
                     source_input_age_batch = paddle.stack(source_input_age_batch)
 
@@ -129,7 +128,7 @@ def run_on_batch(inputs, net, opts, latent_to_inject=None):
                                   resize=opts.resize_outputs,
                                   return_latents=True)
             result_batch.append(res)
-        result_batch = paddle.concat(result_batch, dim=0)
+        result_batch = paddle.concat(result_batch, 0)
     return result_batch
 
 
