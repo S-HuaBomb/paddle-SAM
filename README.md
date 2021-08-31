@@ -16,7 +16,7 @@
 # Training
 首次训练，编译ranger算子.
 ```
-python compile_ranger.py
+python scripts/compile_ranger.py
 ```
 然后再训练
 ```
