@@ -76,6 +76,8 @@ SAM模型下载地址：(文件名：sam_ffhq_aging.pdparams)
 链接：[https://pan.baidu.com/s/1G-Ffs8-y93R0ZlD9mEU6Eg](https://pan.baidu.com/s/1G-Ffs8-y93R0ZlD9mEU6Eg )
 提取码：m3nb
 
+link (Google Drive)：https://drive.google.com/drive/folders/1Bs4MQQ9Pw5E2W1-Y9JA2AkGSWwtDzzis?usp=sharing
+
 下载后将模型的参数保存在```pretrained_models\```中
 
 # Log
